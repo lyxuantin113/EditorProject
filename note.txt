@@ -1,0 +1,6 @@
+python train.py --opt options/train_gfpgan_custom.yml
+
+python inference_gfpgan.py \
+  --img_path path/to/test.jpg \
+  --model_path experiments/train_gfpgan_custom/models/latest.pth \
+  --save_root results

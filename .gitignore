@@ -1,0 +1,9 @@
+# ===== Virtualenv =====
+.venv/
+.idea/
+__pycache__/
+
+CreateDataset
+datasets/gfpgan_dataset
+GFPGAN
+Real-ESRGAN
