@@ -9,10 +9,10 @@ from basicsr.archs.rrdbnet_arch import RRDBNet
 from realesrgan import RealESRGANer
 
 # ========== CẤU HÌNH ==========
-INPUT_IMAGE = 'dungXem.jpg'
-OUTPUT_IMAGE = f'ImagesEnhanced/{INPUT_IMAGE}_final.jpg'
-GFPGAN_MODEL_PATH = 'GFPGAN/experiments/pretrained_models/GFPGANv1.4.pth'
-REAL_ESRGAN_MODEL_PATH = 'Real-ESRGAN/weights/RealESRGAN_x2plus.pth'
+INPUT_IMAGE = '../ImagesOrigin/dungXem.jpg'
+OUTPUT_IMAGE = f'../ImagesEnhanced/{INPUT_IMAGE}_final.jpg'
+GFPGAN_MODEL_PATH = '../GFPGAN/experiments/pretrained_models/GFPGANv1.4.pth'
+REAL_ESRGAN_MODEL_PATH = '../Real-ESRGAN/weights/RealESRGAN_x2plus.pth'
 
 # ========== HÀM CHUẨN HÓA ẢNH ==========
 def ensure_rgb(image_pil):
@@ -100,6 +100,6 @@ for i, box in enumerate(boxes):
     image.paste(enhanced_face, (x1, y1))
 
 # ========== LƯU ẢNH ==========
-os.makedirs("ImagesEnhanced", exist_ok=True)
+os.makedirs("../ImagesEnhanced", exist_ok=True)
 image.save(OUTPUT_IMAGE)
 print(f"✅ Ảnh đã được xử lý hoàn chỉnh và lưu tại: {OUTPUT_IMAGE}")

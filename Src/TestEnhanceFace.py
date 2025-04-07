@@ -7,9 +7,9 @@ import cv2
 import os
 
 # ========== CẤU HÌNH ==========
-INPUT_IMAGE = 'oldimg1.jpg'
-OUTPUT_IMAGE = 'ImagesEnhanced/' + INPUT_IMAGE + '_enhanced.jpg'
-GFPGAN_MODEL_PATH = 'GFPGAN/experiments/pretrained_models/GFPGANv1.4.pth'  # Đặt đường dẫn model tại đây
+INPUT_IMAGE = '../ImagesOrigin/oldimg1.jpg'
+OUTPUT_IMAGE = f'../ImagesEnhanced/{INPUT_IMAGE}_enhanced.jpg'
+GFPGAN_MODEL_PATH = '../GFPGAN/experiments/pretrained_models/GFPGANv1.4.pth'  # Đặt đường dẫn model tại đây
 
 # ========== KHỞI TẠO ==========
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -80,7 +80,7 @@ _, _, restored_img = gfpgan.enhance(
 
 # Lưu kết quả khôi phục toàn ảnh
 if restored_img is not None and isinstance(restored_img, list) and len(restored_img) > 0:
-    Image.fromarray(restored_img[0]).save('dx_restored_full.jpg')
+    Image.fromarray(restored_img[0]).save('../dx_restored_full.jpg')
     print("✔️ Ảnh đã được khôi phục toàn diện: dx_restored_full.jpg")
 else:
     print("⚠️ Không thể khôi phục ảnh toàn diện.")

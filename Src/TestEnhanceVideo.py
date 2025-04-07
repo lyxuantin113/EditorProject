@@ -4,9 +4,9 @@ from gfpgan import GFPGANer
 from PIL import Image
 
 # ========== CẤU HÌNH ==========
-video_path = 'datasets/v2.mp4'  # Video đầu vào
-output_path = 'datasets/v2_enhanced.mp4'  # Video đầu ra
-GFPGAN_MODEL_PATH = 'GFPGAN/experiments/pretrained_models/GFPGANv1.4.pth'
+video_path = '../datasets/v2.mp4'  # Video đầu vào
+output_path = '../VideoEnhanced/v2_enhanced.mp4'  # Video đầu ra
+GFPGAN_MODEL_PATH = '../GFPGAN/experiments/pretrained_models/GFPGANv1.4.pth'
 
 # ========== KHỞI TẠO ==========
 gfpgan = GFPGANer(
